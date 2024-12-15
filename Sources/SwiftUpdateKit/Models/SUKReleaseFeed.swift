@@ -1,9 +1,6 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
-
 //
-//  SwiftUpdateKit.swift
-//  SwiftUpdateKit (SUK)
+//  SUKReleaseFeed.swift
+//  SwiftUpdateKit Core (SUK)
 //
 //  Copyright (c) Nevio Hirani - All rights reserved.
 //  Copyright (c) ScribbleLabApp LLC. - All rights reserved.
@@ -30,6 +27,46 @@
 //
 
 import Foundation
-import Network
-import os.log
-import Security
+
+@available(macOS 15.0, *)
+public struct SUKReleaseFeed {
+    
+    @available(macOS 15.0, *)
+    public struct SUKAuthor {
+        public let name: String
+        public let uri: URL
+    }
+    
+    @available(macOS 15.0, *)
+    public struct SUKEntry {
+        var title: String
+        var link: URL
+        var id: String
+        var updated: Date
+        var published: Date
+        var author: SUKAuthor
+        var summary: String
+        var assetLink: URL
+        var category: String
+    }
+    
+    public let title: String
+    public let description: String
+    public let link: String
+    public let updated: Date
+    public let entries: [SUKEntry]
+    
+    init(
+        title: String,
+        description: String,
+        link: String,
+        updated: Date,
+        entries: [SUKEntry]
+    ) {
+        self.title = title
+        self.description = description
+        self.link = link
+        self.updated = updated
+        self.entries = entries
+    }
+}

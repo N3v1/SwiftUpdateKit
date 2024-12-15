@@ -1,9 +1,6 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
-
 //
-//  SwiftUpdateKit.swift
-//  SwiftUpdateKit (SUK)
+//  SUKReleaseAsset.swift
+//  SwiftUpdateKit Core (SUK)
 //
 //  Copyright (c) Nevio Hirani - All rights reserved.
 //  Copyright (c) ScribbleLabApp LLC. - All rights reserved.
@@ -30,6 +27,11 @@
 //
 
 import Foundation
-import Network
-import os.log
-import Security
+
+@available(macOS 15.0, *)
+public struct SUKReleaseAsset {
+    let url: String
+    let name: String
+    let contentType: String
+    let size: UInt32
+}

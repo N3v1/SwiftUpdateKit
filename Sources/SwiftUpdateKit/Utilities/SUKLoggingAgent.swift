@@ -1,9 +1,6 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
-
 //
-//  SwiftUpdateKit.swift
-//  SwiftUpdateKit (SUK)
+//  SUKLogginAgent.swift
+//  SwiftUpdateKit Core Utilities (SUK)
 //
 //  Copyright (c) Nevio Hirani - All rights reserved.
 //  Copyright (c) ScribbleLabApp LLC. - All rights reserved.
@@ -30,6 +27,48 @@
 //
 
 import Foundation
-import Network
 import os.log
-import Security
+
+@available(macOS 15.0, *)
+public struct SUKLoggingAgent {
+    private static let subsystem = "com.scribblefoundation.swiftupdatekit"
+    
+    public enum SUKLoggingCategory: String {
+        case info = "INFO"
+        case warning = "WARNING"
+        case error = "ERROR"
+        case critical = "CRITICAL"
+        
+        var logInstance: OSLog {
+            return OSLog(
+                subsystem: SUKLoggingAgent.subsystem,
+                category: self.rawValue
+            )
+        }
+    }
+    
+    public static func log(
+        message: String,
+        category: SUKLoggingCategory,
+        type: OSLogType = .default
+    ) {
+        let log = category.logInstance
+        os_log("%{public}@", log: log, type: type, message)
+    }
+    
+    public static func log(
+        message: String,
+        category: SUKLoggingCategory,
+        type: OSLogType = .default,
+        with metadata: [String: Any]? = nil
+    ) {
+        var fullMessage = message
+        if let metadata = metadata {
+            for (key, value) in metadata {
+                fullMessage += " | \(key): \(value)"
+            }
+        }
+        let log = category.logInstance
+        os_log("%{public}@", log: log, type: type, fullMessage)
+    }
+}

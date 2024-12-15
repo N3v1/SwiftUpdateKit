@@ -1,9 +1,6 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
-
 //
-//  SwiftUpdateKit.swift
-//  SwiftUpdateKit (SUK)
+//  SUKUpdateManager+UpdateChannel.swift
+//  SwiftUpdateKit Core (SUK)
 //
 //  Copyright (c) Nevio Hirani - All rights reserved.
 //  Copyright (c) ScribbleLabApp LLC. - All rights reserved.
@@ -30,6 +27,16 @@
 //
 
 import Foundation
-import Network
-import os.log
-import Security
+
+@available(macOS 15.0, *)
+public extension SUKUpdateManager {
+    func fetchReleases(
+        for channel: SUKUpdateChannel,
+        completion: @escaping (Result<SUKReleaseFeed, SUKError>
+        ) -> Void) {}
+    
+    func subscribe(
+        to channel: SUKUpdateChannel,
+        completion: @escaping (Result<Bool, SUKError>
+        ) -> Void) {}
+}
