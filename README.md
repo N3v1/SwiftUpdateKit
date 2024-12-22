@@ -3,7 +3,7 @@
 
 # Swift Update Kit (SUK)
 
-SUK is a lightweight, customizable, and powerful framework designed to handle software updates effortlessly. It prioritizes simplicity in setup while offering advanced capabilities like delta updates, custom release providers, lifecycle hooks, and more. SUK is ideal for developers seeking an alternative to more intensive frameworks like Sparkle.
+SwiftUpdateKit is a simplified yet powerful update framework designed for macOS applications. It provides easy integration for handling software updates, enabling features like delta updates, custom release channels, and lifecycle event hooks, all while minimizing setup complexity. Whether you need to implement automatic updates or build a custom update mechanism, SwiftUpdateKit provides the flexibility and power to meet your needs.
 
 > [!NOTE]
 > SwiftUpdateKit is currently in development and not yet ready for production use. You are welcome to use the [latest alpha/dev build](https://github.com/N3v1/SwiftUpdateKit/releases/latest) at your own risk. We welcome feedback [here](https://github.com/N3v1/SwiftUpdateKit/issues).

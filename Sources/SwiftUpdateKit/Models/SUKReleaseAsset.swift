@@ -29,7 +29,7 @@
 import Foundation
 
 @available(macOS 15.0, *)
-public struct SUKReleaseAsset {
+public struct SUKReleaseAsset: Sendable {
     let url: String
     let name: String
     let contentType: String

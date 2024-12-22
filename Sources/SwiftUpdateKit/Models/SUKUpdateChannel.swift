@@ -33,5 +33,18 @@ public enum SUKUpdateChannel {
     case stable
     case alpha
     case beta
-    case custom
+    case custom(String)
+    
+    var description: String {
+        switch self {
+        case .stable:
+            return "Stable"
+        case .beta:
+            return "Beta"
+        case .alpha:
+            return "Alpha"
+        case .custom(_):
+            return ""
+        }
+    }
 }

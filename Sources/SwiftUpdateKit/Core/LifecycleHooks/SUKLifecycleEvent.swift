@@ -27,3 +27,73 @@
 //
 
 import Foundation
+
+@available(macOS 15.0, *)
+public class SUKLifeCycleEvent: @unchecked Sendable {
+    // MARK: - Singleton
+    public static let shared = SUKLifeCycleEvent()
+    
+    // MARK: - Private Properties
+    private let queue = DispatchQueue(
+        label: "com.scribblefoundation.swiftupdatekit.lifecycle",
+        attributes: .concurrent
+    )
+
+    private var willStartUpdateHandlers: [() -> Void] = []
+    private var didFinishUpdateHandlers: [() -> Void] = []
+    private var didFailUpdateHandlers: [(Error) -> Void] = []
+    private var onUpdateDownloadedHandlers: [(SUKRelease) -> Void] = []
+    
+    // MARK: - Initialization
+    private init() {}
+    
+    // MARK: - Lifecycle Hook Registration
+    public func onWillStartUpdate(_ handler: @escaping @Sendable () -> Void) {
+        queue.async(flags: .barrier) {
+            self.willStartUpdateHandlers.append(handler)
+        }
+    }
+    
+    public func onDidFinishUpdate(_ handler: @escaping @Sendable () -> Void) {
+        queue.async(flags: .barrier) {
+            self.didFinishUpdateHandlers.append(handler)
+        }
+    }
+    
+    public func onDidFailUpdate(_ handler: @escaping @Sendable (Error) -> Void) {
+        queue.async(flags: .barrier) {
+            self.didFailUpdateHandlers.append(handler)
+        }
+    }
+    
+    public func onUpdateDownloaded(_ handler: @escaping @Sendable (SUKRelease) -> Void) {
+        queue.async(flags: .barrier) {
+            self.onUpdateDownloadedHandlers.append(handler)
+        }
+    }
+    
+    // MARK: - Trigger Lifecycle Events
+    func triggerWillStartUpdate() {
+        queue.async {
+            self.willStartUpdateHandlers.forEach { $0() }
+        }
+    }
+    
+    func triggerDidFinishUpdate() {
+        queue.async {
+            self.didFinishUpdateHandlers.forEach { $0() }
+        }
+    }
+    
+    func triggerDidFailUpdate(with error: Error) {
+        queue.async {
+            self.didFailUpdateHandlers.forEach { $0(error) }
+        }
+    }
+    
+    func triggerOnUpdateDownloaded(for release: SUKRelease) {
+        queue.async {
+            self.onUpdateDownloadedHandlers.forEach { $0(release) }
+        }
+    }
+}

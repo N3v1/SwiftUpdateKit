@@ -30,9 +30,67 @@ import Foundation
 
 @available(macOS 15.0, *) @MainActor
 public class SUKUpdateManager {
+    
     static let shared = SUKUpdateManager()
     
-    func getReleaseFeed(
+    private var config: SUKConfig?
+    
+    public static func initialize(withConfig config: SUKConfig) {
+        shared.configure(withConfig: config)
+    }
+    
+    public func configure(withConfig config: SUKConfig) {
+        self.config = config
+        
+        applyConfiguration()
+    }
+    
+    private func applyConfiguration() {
+        guard let config = config else {
+            SUKLoggingAgent.log(
+                message: "No configuration set.",
+                category: .error, type: .error
+            )
+            return
+        }
+        
+        let interval = config.autoCheckInterval
+        SUKLoggingAgent.log(
+            message: "Auto-check interval set to: \(interval.description)",
+            category: .info, type: .info
+        )
+        
+        // Handle updateChannels
+        let channels = config.updateChannels
+        SUKLoggingAgent.log(
+            message: "Update channels set to: \(channels.map { $0.description }.joined(separator: ", "))",
+            category: .info, type: .info
+        )
+        
+        // Handle autoUpdateEnabled
+        let autoUpdateEnabled = config.autoUpdateEnabled ?? true
+        SUKLoggingAgent.log(
+            message: "Auto-update is enabled: \(autoUpdateEnabled)",
+            category: .info, type: .info
+        )
+        
+        // Handle deltaUpdatesEnabled
+        let deltaUpdatesEnabled = config.enableDeltaUpdates ?? true
+        SUKLoggingAgent.log(
+            message: "Delta updates are enabled: \(deltaUpdatesEnabled)",
+            category: .info, type: .info
+        )
+        
+        // Set channel priorities if provided
+        if let channelPriorities = config.channelPriorities {
+            SUKLoggingAgent.log(
+                message: "Channel priorities set to: \(channelPriorities.map { $0.description }.joined(separator: ", "))",
+                category: .info, type: .info
+            )
+        }
+    }
+    
+    public func getReleaseFeed(
         owner: String,
         repository: String,
         completion: @Sendable @escaping (Result<SUKReleaseFeed, SUKError>) -> Void
@@ -102,7 +160,7 @@ public class SUKUpdateManager {
         task.resume()
     }
     
-    func parseReleaseFeed(data: Data) throws -> SUKReleaseFeed {
+    public func parseReleaseFeed(data: Data) throws -> SUKReleaseFeed {
         let parser = XMLParser(data: data)
         let feedParserDelegate = SUKReleaseFeedParserDelegate()
         
@@ -132,4 +190,14 @@ public class SUKUpdateManager {
             entries: feedParserDelegate.entries
         )
     }
+    
+    func fetchReleases(
+        for channel: SUKUpdateChannel,
+        completion: @Sendable @escaping (Result<SUKReleaseFeed, SUKError>
+    ) -> Void) {}
+    
+    func subscribe(
+        to channel: SUKUpdateChannel,
+        completion: @Sendable @escaping (Result<Bool, SUKError>
+    ) -> Void) {}
 }

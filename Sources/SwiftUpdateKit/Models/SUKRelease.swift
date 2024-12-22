@@ -29,7 +29,7 @@
 import Foundation
 
 @available(macOS 15.0, *)
-public struct SUKRelease {
+public struct SUKRelease: Sendable {
     let url: String
     let tag: String
     let prerelease: Bool
