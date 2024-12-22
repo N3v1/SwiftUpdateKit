@@ -1,0 +1,90 @@
+# SwiftLint Configuration for ScribbleLab
+# This configuration ensures consistent, maintainable, and high-quality code in the project.
+
+# Default rules turned off to avoid unnecessary noise
+disabled_rules:
+  - colon                # Optional colons for property declarations
+  - comma                # Trailing commas are stylistic
+  - control_statement    # Brace usage for control statements is handled separately
+  - trailing_whitespace  # Managed by formatting tools
+  - vertical_whitespace  # Vertical whitespace is subjective
+  - todo                 # TODOs are tracked in other systems
+  - trailing_comma       # Trailing commas are subjective
+  - nesting              # Deep nesting handled on a case-by-case basis
+
+# Rules turned on explicitly for stricter checks
+opt_in_rules:
+  - empty_count          # Avoid unnecessary loops
+  - function_body_length
+  - cyclomatic_complexity
+  # Use `swiftlint rules` to explore and add additional opt-in rules
+
+# Exclude certain paths from linting
+excluded:
+  - Documentation.docc   # Specific docc documentation
+  - .build               # Swift Package Manager artifacts
+  - .swiftpm             # Swift Package Manager artifacts
+  - Tests                # Generated test files
+  - DerivedData          # Xcode-derived data
+
+# Analyzer rules (run via `swiftlint analyze`)
+analyzer_rules:
+  - explicit_self        # Explicit `self.` usage for clarity
+
+# Settings
+allow_zero_lintable_files: false # Fail when no lintable files are found
+strict: true                    # Treat warnings as errors (consider enabling in CI for production)
+
+# Configurable rules
+force_cast: warning              # Avoid forced casting, warn developers
+force_try:
+  severity: warning              # Warn when forced try is used
+line_length: 145                 # Maximum line length to ensure readability
+
+# Length rules
+type_body_length:
+  - 300 # warning: Allowable body length
+  - 400 # error: Maximum permissible body length
+file_length:
+  warning: 500                   # Recommended file length
+  error: 1200                    # Maximum permissible file length
+
+# Naming conventions
+type_name:
+  min_length: 3                  # Minimum type name length
+  max_length:
+    warning: 40                  # Warning for long names
+    error: 50                    # Error for excessively long names
+  excluded:                      # Exceptions for specific names
+    - iPhone
+  allowed_symbols: ["_"]         # Allow underscores in type names
+identifier_name:
+  min_length:
+    error: 2                     # Minimum identifier name length
+  max_length: 40                 # Maximum identifier name length
+  excluded:
+    - id
+    - URL
+    - GlobalAPIKey
+    - vm
+
+function_body_length:
+  warning: 80  # Maximum function body length allowed before warning (default: 50)
+  error: 100   # Maximum function body length allowed before error (default: 100)
+
+cyclomatic_complexity:
+  warning: 20   # Set the warning threshold to 20
+  error: 30     # Set the error threshold to 30
+
+# Uncomment and customize custom rules for specific project needs
+# custom_rules:
+#   spaces_over_tabs:
+#     included: ".*\\.swift"
+#     name: "Spaces over Tabs"
+#     regex: "\t"
+#     message: "Prefer spaces for indents over tabs. See Xcode setting: 'Text Editing' -> 'Indentation'"
+#     severity: warning
+
+# Reporter configuration (customize per environment)
+# reporter type (xcode, json, csv, checkstyle, codeclimate, junit, html, emoji, sonarqube, markdown, github-actions-logging, summary)
+reporter: "github-actions-logging" # Use "github-actions-logging" for CI environments
