@@ -234,6 +234,10 @@ public final class SUKIntegrityValidator: @unchecked Sendable {
     ///   macOS applications, ensuring integrity and authenticity during expansion.
     /// - `.app`: The directory format used by macOS for applications, often
     ///   distributed as part of macOS app bundles.
+    /// - `.tar.bz2`: A compressed TAR archive with Bzip2 compression, used on Unix-like systems for packaging files.
+    /// - `.iso`: A disk image format often used for optical media distribution.
+    /// - `.tar.xz`: A compressed TAR archive with XZ compression, used in Unix-like systems for software distribution.
+    ///
     ///
     /// This enum can be used to restrict file inputs, ensuring the proper formats
     /// are used in the update and installation process, preventing unwanted file types
@@ -292,6 +296,33 @@ public final class SUKIntegrityValidator: @unchecked Sendable {
         /// apps for macOS, either as standalone bundles or as part of a DMG.
         case app
         
+        /// A compressed TAR archive with Bzip2 compression.
+        ///
+        /// TAR is a format used to bundle multiple files into a single archive,
+        /// and Bzip2 compression is applied to reduce the size of the archive.
+        /// This format is commonly used in Unix-like systems for distributing
+        /// software packages and is typically accompanied by extraction tools
+        /// like `tar` and `bzip2`.
+        case tar_bz2
+        
+        /// A disk image format, often used for optical media.
+        ///
+        /// ISO is an image format commonly used to distribute the contents of a
+        /// physical disc (e.g., CD or DVD). The ISO file contains a complete
+        /// copy of the original disc, making it useful for software distribution
+        /// or backup purposes. It can be mounted as a virtual disk image or burned
+        /// to an actual optical disc for installation or use.
+        case iso
+        
+        /// A compressed TAR archive with XZ compression.
+        ///
+        /// TAR is a format used to bundle multiple files into a single archive,
+        /// and XZ compression is applied to provide higher compression ratios
+        /// than gzip or Bzip2. This format is widely used in Unix-like systems
+        /// for distributing software packages and is typically handled by tools
+        /// like `tar` and `xz`.
+        case tar_xz
+        
         // MARK: - Computed Property
         
         /// A computed property that returns the string representation of the file
@@ -310,6 +341,9 @@ public final class SUKIntegrityValidator: @unchecked Sendable {
             case .tar_gz: return ".tar.gz"
             case .xip: return ".xip"
             case .app: return ".app"
+            case .tar_bz2: return ".tar.bz2"
+            case .iso: return ".iso"
+            case .tar_xz: return ".tar.xz"
             }
         }
     }
