@@ -55,18 +55,4 @@ public struct SUKReleaseFeed {
     public let link: String
     public let updated: Date
     public let entries: [SUKEntry]
-    
-    init(
-        title: String,
-        description: String,
-        link: String,
-        updated: Date,
-        entries: [SUKEntry]
-    ) {
-        self.title = title
-        self.description = description
-        self.link = link
-        self.updated = updated
-        self.entries = entries
-    }
 }

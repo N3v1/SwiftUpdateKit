@@ -43,7 +43,7 @@ public enum SUKUpdateChannel {
             return "Beta"
         case .alpha:
             return "Alpha"
-        case .custom(_):
+        case .custom:
             return ""
         }
     }

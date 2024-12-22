@@ -67,6 +67,7 @@ identifier_name:
     - URL
     - GlobalAPIKey
     - vm
+    - tar_gz
 
 function_body_length:
   warning: 80  # Maximum function body length allowed before warning (default: 50)
