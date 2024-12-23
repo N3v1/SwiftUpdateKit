@@ -266,7 +266,9 @@ public class SUKFileManager: @unchecked Sendable {
     /// - Parameter allowedExtensions: An array of valid file extensions.
     /// - Throws: `SUKFileManagerError.invalidFileType` if the file's extension is not allowed.
     public func validateFile(at path: String, allowedExtensions: [String]) throws {
-        guard let fileExtension = URL(fileURLWithPath: path).pathExtension.lowercased() else {
+        let fileExtension = URL(fileURLWithPath: path).pathExtension.lowercased()
+        
+        if fileExtension.isEmpty {
             throw SUKError.SUKFileManagerError.invalidFileType
         }
         
