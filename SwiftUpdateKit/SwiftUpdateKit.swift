@@ -1,9 +1,6 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
-
 //
 //  SwiftUpdateKit.swift
-//  SwiftUpdateKit (SUK)
+//  SwiftUpdateKit Umbrella Framework
 //
 //  Copyright (c) Nevio Hirani - All rights reserved.
 //  Copyright (c) ScribbleLabApp LLC. - All rights reserved.
@@ -29,7 +26,10 @@
 //  SOFTWARE.
 //
 
-import Foundation
-import Network
-import os.log
-import Security
+import SUKCore
+import SUKUtils
+import SUKModels
+import SUKParsing
+import SUKSecurity
+import SUKNetworking
+import SwiftUpdateKitUI

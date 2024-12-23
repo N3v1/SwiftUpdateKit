@@ -38,6 +38,7 @@ import CryptoKit
 /// compare them to expected hash values, and verify if files are intact. This process is crucial in
 /// maintaining the security and trustworthiness of software, ensuring that users receive genuine,
 /// untampered files when performing updates or downloading software.
+@available(macOS 15.0, *)
 public extension SUKIntegrityValidator {
     
     /// A struct that encapsulates a SHA-256 hash value computed from a file, which is used for comparing
