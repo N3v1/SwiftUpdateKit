@@ -4,22 +4,6 @@ osx_image: macos-15.2
 swift:
   - 6.0
 
-before_install:
-  - swift package resolve
-
-install:
-
 script:
-  # Build the framework using xcodebuild (since this is a framework and requires Xcode)
   - xcodebuild clean build -scheme SwiftUpdateKit -destination 'platform=macOS'  
-  # Run tests using xcodebuild (if you have test targets)
   - xcodebuild test -scheme SwiftUpdateKit -destination 'platform=macOS'  
-  # Alternatively, if you're using `swift test` for unit tests (but `xcodebuild` is preferred for a framework)
-  # - swift test 
-
-# If you want to deploy or upload artifacts, use deploy section
-# deploy:
-#   provider: releases
-#   api_key: $GITHUB_TOKEN
-#   file: path/to/your/compiled/artifact.zip
-#   skip_cleanup: true

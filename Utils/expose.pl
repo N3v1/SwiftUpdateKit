@@ -34,13 +34,13 @@ use File::Find;
 use File::Slurp;
 
 my @source_dirs = (
-    './SUKCore',
-    './SUKModels',
-    './SUKNetworking',
-    './SUKSecurity',
-    './SUKUtils',
-    './SwiftUpdateKitUI'
-);
+                   './SUKCore',
+                   './SUKModels',
+                   './SUKNetworking',
+                   './SUKSecurity',
+                   './SUKUtils',
+                   './SwiftUpdateKitUI'
+                   );
 
 my $output_file = './SwiftUpdateKit/SwiftUpdateKit.swift';
 
@@ -65,7 +65,7 @@ my $license_header = <<"HEADER";
 //  copies or substantial portions of the Software.
 //
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  IMPLIED WARRANTIES, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 //  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 //  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
@@ -129,14 +129,14 @@ sub append_to_exposed_methods {
     }
     
     my $available_annotation = "";
-    if ($content =~ /\s*@available\(([^)]+)\)/g) {
-        $available_annotation = "@available($1)\n";
+    if ($content =~ /\s*\@available\(([^)]+)\)/g) {  # Escape @
+        $available_annotation = "\@available($1)\n"; # Escape @
     } else {
-        $available_annotation = "@available(macOS 15.0, *)\n";
+        $available_annotation = "\@available(macOS 15.0, *)\n"; # Escape @
     }
     
     my $additional_attributes = "";
-    while ($content =~ /@(\w+(\([^\)]*\))?)/g) {
+    while ($content =~ /\@(\w+(\([^\)]*\))?)/g) {  # Escape @
         my $attribute = $1;
         
         if ($attribute =~ /^(available|backDeployed|usableFromInline|objc|discardableResult|dynamicCallable|dynamicMemberLookup|freestanding|frozen|inlinable|main|nonobjc|NSCopying|NSManaged|objc\(\)|objcMembers|preconcurrency|propertyWrapper|WrapperWithProjection|resultBuilder|ArrayBuilder|DrawingBuilder|DrawingPartialBlockBuilder|requires_stored_property_inits|testable|unchecked|warn_unqualified_access|autoclosure|convention|escaping|Sendable|unknown|abi\(|binaryInterface|_silgen_name|_specialize)/) {
@@ -169,7 +169,7 @@ foreach my $dir (@source_dirs) {
         
         my ($filename) = $file =~ m{([^/]+)\.swift$};
         
-        while ($content =~ /(@SUKExport.*?)(public|internal|fileprivate|private)?\s*(func|var|let|class|enum|protocol|actor|final\s+class|subscript|static|struct)\s+\w+[\w\(\),<>\[\]]*\s*(\{[^}]*\})?/gs) {
+        while ($content =~ /(\@SUKExport.*?)(public|internal|fileprivate|private)?\s*(func|var|let|class|enum|protocol|actor|final\s+class|subscript|static|struct)\s+\w+[\w\(\),<>\[\]]*\s*(\{[^}]*\})?/gs) {
             my $symbol = $1;
             my $visibility = $2 // '';
             my $type = $3;

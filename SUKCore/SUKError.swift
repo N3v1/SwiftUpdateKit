@@ -27,6 +27,7 @@
 //
 
 import Foundation
+import _SUKCommon
 
 @available(macOS 15.0, *)
 public struct SUKError: Error, Sendable {

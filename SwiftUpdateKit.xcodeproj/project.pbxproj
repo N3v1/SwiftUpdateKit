@@ -21,6 +21,23 @@
 		380F819F2D198CD80090A121 /* _SUKCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 380F81792D198B540090A121 /* _SUKCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		380F81A32D198CDD0090A121 /* _SUKCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 380F81792D198B540090A121 /* _SUKCommon.framework */; };
 		380F81A42D198CDD0090A121 /* _SUKCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 380F81792D198B540090A121 /* _SUKCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		380F81E92D19C4250090A121 /* _SwiftCompilerPluginMessageHandling in Frameworks */ = {isa = PBXBuildFile; productRef = 380F81E82D19C4250090A121 /* _SwiftCompilerPluginMessageHandling */; };
+		380F81EB2D19C4250090A121 /* _SwiftLibraryPluginProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 380F81EA2D19C4250090A121 /* _SwiftLibraryPluginProvider */; };
+		380F81ED2D19C4250090A121 /* SwiftBasicFormat in Frameworks */ = {isa = PBXBuildFile; productRef = 380F81EC2D19C4250090A121 /* SwiftBasicFormat */; };
+		380F81EF2D19C4250090A121 /* SwiftCompilerPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = 380F81EE2D19C4250090A121 /* SwiftCompilerPlugin */; };
+		380F81F12D19C4250090A121 /* SwiftDiagnostics in Frameworks */ = {isa = PBXBuildFile; productRef = 380F81F02D19C4250090A121 /* SwiftDiagnostics */; };
+		380F81F32D19C4250090A121 /* SwiftIDEUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 380F81F22D19C4250090A121 /* SwiftIDEUtils */; };
+		380F81F52D19C4250090A121 /* SwiftOperators in Frameworks */ = {isa = PBXBuildFile; productRef = 380F81F42D19C4250090A121 /* SwiftOperators */; };
+		380F81F72D19C4250090A121 /* SwiftParser in Frameworks */ = {isa = PBXBuildFile; productRef = 380F81F62D19C4250090A121 /* SwiftParser */; };
+		380F81F92D19C4250090A121 /* SwiftParserDiagnostics in Frameworks */ = {isa = PBXBuildFile; productRef = 380F81F82D19C4250090A121 /* SwiftParserDiagnostics */; };
+		380F81FB2D19C4250090A121 /* SwiftRefactor in Frameworks */ = {isa = PBXBuildFile; productRef = 380F81FA2D19C4250090A121 /* SwiftRefactor */; };
+		380F81FD2D19C4250090A121 /* SwiftSyntax in Frameworks */ = {isa = PBXBuildFile; productRef = 380F81FC2D19C4250090A121 /* SwiftSyntax */; };
+		380F81FF2D19C4250090A121 /* SwiftSyntaxBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = 380F81FE2D19C4250090A121 /* SwiftSyntaxBuilder */; };
+		380F82012D19C4250090A121 /* SwiftSyntaxMacroExpansion in Frameworks */ = {isa = PBXBuildFile; productRef = 380F82002D19C4250090A121 /* SwiftSyntaxMacroExpansion */; };
+		380F82032D19C4250090A121 /* SwiftSyntaxMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 380F82022D19C4250090A121 /* SwiftSyntaxMacros */; };
+		380F82052D19C4250090A121 /* SwiftSyntaxMacrosGenericTestSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 380F82042D19C4250090A121 /* SwiftSyntaxMacrosGenericTestSupport */; };
+		380F82072D19C4250090A121 /* SwiftSyntaxMacrosTestSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 380F82062D19C4250090A121 /* SwiftSyntaxMacrosTestSupport */; };
+		380F82082D19C6BE0090A121 /* lib_SUKCommonMacros.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 380F81D92D19C3E80090A121 /* lib_SUKCommonMacros.a */; };
 		3871D7A62D19743F00A3603F /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 3871D7A42D19743F00A3603F /* LICENSE.md */; };
 		3871D7A72D19743F00A3603F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3871D7A52D19743F00A3603F /* README.md */; };
 		3871D8702D19761900A3603F /* SUKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3871D7FD2D19759200A3603F /* SUKCore.framework */; };
@@ -89,6 +106,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 380F81782D198B540090A121;
 			remoteInfo = _SUKCommon;
+		};
+		380F82092D19C6BE0090A121 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38B3D2302D1973A100BCAE6A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 380F81D82D19C3E80090A121;
+			remoteInfo = _SUKCommonMacros;
 		};
 		3871D8722D19761900A3603F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -248,6 +272,7 @@
 /* Begin PBXFileReference section */
 		380F81732D1981390090A121 /* expose.pl */ = {isa = PBXFileReference; lastKnownFileType = text.script.perl; path = expose.pl; sourceTree = "<group>"; };
 		380F81792D198B540090A121 /* _SUKCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = _SUKCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		380F81D92D19C3E80090A121 /* lib_SUKCommonMacros.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = lib_SUKCommonMacros.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3871D79E2D19742A00A3603F /* format.pl */ = {isa = PBXFileReference; lastKnownFileType = text.script.perl; path = format.pl; sourceTree = "<group>"; };
 		3871D79F2D19742A00A3603F /* generate-sources.pl */ = {isa = PBXFileReference; lastKnownFileType = text.script.perl; path = "generate-sources.pl"; sourceTree = "<group>"; };
 		3871D7A02D19742A00A3603F /* gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = gyb; sourceTree = "<group>"; };
@@ -273,6 +298,13 @@
 				_SUKCommon.h,
 			);
 			target = 380F81782D198B540090A121 /* _SUKCommon */;
+		};
+		380F81E52D19C3FE0090A121 /* Exceptions for "_SUKCommonMacros" folder in "_SUKCommonMacros" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"_SUKCommonMacros-Bridging-Header.h",
+			);
+			target = 380F81D82D19C3E80090A121 /* _SUKCommonMacros */;
 		};
 		3871D80E2D19759200A3603F /* Exceptions for "SUKCore" folder in "SUKCore" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
@@ -449,6 +481,14 @@
 			path = _SUKCommon;
 			sourceTree = "<group>";
 		};
+		380F81DA2D19C3E80090A121 /* _SUKCommonMacros */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				380F81E52D19C3FE0090A121 /* Exceptions for "_SUKCommonMacros" folder in "_SUKCommonMacros" target */,
+			);
+			path = _SUKCommonMacros;
+			sourceTree = "<group>";
+		};
 		3871D7FE2D19759200A3603F /* SUKCore */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -531,6 +571,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				380F82082D19C6BE0090A121 /* lib_SUKCommonMacros.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		380F81D72D19C3E80090A121 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				380F81EB2D19C4250090A121 /* _SwiftLibraryPluginProvider in Frameworks */,
+				380F81FF2D19C4250090A121 /* SwiftSyntaxBuilder in Frameworks */,
+				380F82072D19C4250090A121 /* SwiftSyntaxMacrosTestSupport in Frameworks */,
+				380F81ED2D19C4250090A121 /* SwiftBasicFormat in Frameworks */,
+				380F81EF2D19C4250090A121 /* SwiftCompilerPlugin in Frameworks */,
+				380F81F52D19C4250090A121 /* SwiftOperators in Frameworks */,
+				380F81FD2D19C4250090A121 /* SwiftSyntax in Frameworks */,
+				380F81F32D19C4250090A121 /* SwiftIDEUtils in Frameworks */,
+				380F82052D19C4250090A121 /* SwiftSyntaxMacrosGenericTestSupport in Frameworks */,
+				380F81F72D19C4250090A121 /* SwiftParser in Frameworks */,
+				380F81F12D19C4250090A121 /* SwiftDiagnostics in Frameworks */,
+				380F81E92D19C4250090A121 /* _SwiftCompilerPluginMessageHandling in Frameworks */,
+				380F82032D19C4250090A121 /* SwiftSyntaxMacros in Frameworks */,
+				380F81FB2D19C4250090A121 /* SwiftRefactor in Frameworks */,
+				380F82012D19C4250090A121 /* SwiftSyntaxMacroExpansion in Frameworks */,
+				380F81F92D19C4250090A121 /* SwiftParserDiagnostics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,6 +715,7 @@
 				3871D8572D1975FC00A3603F /* SwiftUpdateKitUI */,
 				3871D8662D19760400A3603F /* SUKUtils */,
 				380F817A2D198B540090A121 /* _SUKCommon */,
+				380F81DA2D19C3E80090A121 /* _SUKCommonMacros */,
 				3871D86F2D19761900A3603F /* Frameworks */,
 				38B3D23A2D1973A100BCAE6A /* Products */,
 			);
@@ -669,6 +734,7 @@
 				3871D8562D1975FC00A3603F /* SwiftUpdateKitUI.framework */,
 				3871D8652D19760400A3603F /* SUKUtils.framework */,
 				380F81792D198B540090A121 /* _SUKCommon.framework */,
+				380F81D92D19C3E80090A121 /* lib_SUKCommonMacros.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -677,6 +743,13 @@
 
 /* Begin PBXHeadersBuildPhase section */
 		380F81742D198B540090A121 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		380F81D52D19C3E80090A121 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -754,6 +827,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				380F820A2D19C6BE0090A121 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				380F817A2D198B540090A121 /* _SUKCommon */,
@@ -764,6 +838,44 @@
 			productName = _SUKCommon;
 			productReference = 380F81792D198B540090A121 /* _SUKCommon.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		380F81D82D19C3E80090A121 /* _SUKCommonMacros */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 380F81DF2D19C3E80090A121 /* Build configuration list for PBXNativeTarget "_SUKCommonMacros" */;
+			buildPhases = (
+				380F81D52D19C3E80090A121 /* Headers */,
+				380F81D62D19C3E80090A121 /* Sources */,
+				380F81D72D19C3E80090A121 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				380F81DA2D19C3E80090A121 /* _SUKCommonMacros */,
+			);
+			name = _SUKCommonMacros;
+			packageProductDependencies = (
+				380F81E82D19C4250090A121 /* _SwiftCompilerPluginMessageHandling */,
+				380F81EA2D19C4250090A121 /* _SwiftLibraryPluginProvider */,
+				380F81EC2D19C4250090A121 /* SwiftBasicFormat */,
+				380F81EE2D19C4250090A121 /* SwiftCompilerPlugin */,
+				380F81F02D19C4250090A121 /* SwiftDiagnostics */,
+				380F81F22D19C4250090A121 /* SwiftIDEUtils */,
+				380F81F42D19C4250090A121 /* SwiftOperators */,
+				380F81F62D19C4250090A121 /* SwiftParser */,
+				380F81F82D19C4250090A121 /* SwiftParserDiagnostics */,
+				380F81FA2D19C4250090A121 /* SwiftRefactor */,
+				380F81FC2D19C4250090A121 /* SwiftSyntax */,
+				380F81FE2D19C4250090A121 /* SwiftSyntaxBuilder */,
+				380F82002D19C4250090A121 /* SwiftSyntaxMacroExpansion */,
+				380F82022D19C4250090A121 /* SwiftSyntaxMacros */,
+				380F82042D19C4250090A121 /* SwiftSyntaxMacrosGenericTestSupport */,
+				380F82062D19C4250090A121 /* SwiftSyntaxMacrosTestSupport */,
+			);
+			productName = _SUKCommonMacros;
+			productReference = 380F81D92D19C3E80090A121 /* lib_SUKCommonMacros.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 		3871D7FC2D19759200A3603F /* SUKCore */ = {
 			isa = PBXNativeTarget;
@@ -1008,6 +1120,10 @@
 					380F81782D198B540090A121 = {
 						CreatedOnToolsVersion = 16.0;
 					};
+					380F81D82D19C3E80090A121 = {
+						CreatedOnToolsVersion = 16.0;
+						LastSwiftMigration = 1600;
+					};
 					3871D7FC2D19759200A3603F = {
 						CreatedOnToolsVersion = 16.0;
 					};
@@ -1046,6 +1162,9 @@
 			);
 			mainGroup = 38B3D22F2D1973A100BCAE6A;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				380F81A92D19BC530090A121 /* XCRemoteSwiftPackageReference "swift-syntax" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 38B3D23A2D1973A100BCAE6A /* Products */;
 			projectDirPath = "";
@@ -1061,6 +1180,7 @@
 				3871D8552D1975FC00A3603F /* SwiftUpdateKitUI */,
 				3871D8642D19760400A3603F /* SUKUtils */,
 				380F81782D198B540090A121 /* _SUKCommon */,
+				380F81D82D19C3E80090A121 /* _SUKCommonMacros */,
 			);
 		};
 /* End PBXProject section */
@@ -1169,6 +1289,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		380F81D62D19C3E80090A121 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3871D7F92D19759200A3603F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1269,6 +1396,11 @@
 			isa = PBXTargetDependency;
 			target = 380F81782D198B540090A121 /* _SUKCommon */;
 			targetProxy = 380F81A52D198CDD0090A121 /* PBXContainerItemProxy */;
+		};
+		380F820A2D19C6BE0090A121 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 380F81D82D19C3E80090A121 /* _SUKCommonMacros */;
+			targetProxy = 380F82092D19C6BE0090A121 /* PBXContainerItemProxy */;
 		};
 		3871D8732D19761900A3603F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1376,6 +1508,37 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		380F81E02D19C3E80090A121 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W93RMB5CDG;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "_SUKCommonMacros/_SUKCommonMacros-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		380F81E12D19C3E80090A121 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W93RMB5CDG;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "_SUKCommonMacros/_SUKCommonMacros-Bridging-Header.h";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
 		};
@@ -2077,6 +2240,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		380F81DF2D19C3E80090A121 /* Build configuration list for PBXNativeTarget "_SUKCommonMacros" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				380F81E02D19C3E80090A121 /* Debug */,
+				380F81E12D19C3E80090A121 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3871D80F2D19759200A3603F /* Build configuration list for PBXNativeTarget "SUKCore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2168,6 +2340,100 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		380F81A92D19BC530090A121 /* XCRemoteSwiftPackageReference "swift-syntax" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-syntax";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 600.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		380F81E82D19C4250090A121 /* _SwiftCompilerPluginMessageHandling */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 380F81A92D19BC530090A121 /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = _SwiftCompilerPluginMessageHandling;
+		};
+		380F81EA2D19C4250090A121 /* _SwiftLibraryPluginProvider */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 380F81A92D19BC530090A121 /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = _SwiftLibraryPluginProvider;
+		};
+		380F81EC2D19C4250090A121 /* SwiftBasicFormat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 380F81A92D19BC530090A121 /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = SwiftBasicFormat;
+		};
+		380F81EE2D19C4250090A121 /* SwiftCompilerPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 380F81A92D19BC530090A121 /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = SwiftCompilerPlugin;
+		};
+		380F81F02D19C4250090A121 /* SwiftDiagnostics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 380F81A92D19BC530090A121 /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = SwiftDiagnostics;
+		};
+		380F81F22D19C4250090A121 /* SwiftIDEUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 380F81A92D19BC530090A121 /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = SwiftIDEUtils;
+		};
+		380F81F42D19C4250090A121 /* SwiftOperators */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 380F81A92D19BC530090A121 /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = SwiftOperators;
+		};
+		380F81F62D19C4250090A121 /* SwiftParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 380F81A92D19BC530090A121 /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = SwiftParser;
+		};
+		380F81F82D19C4250090A121 /* SwiftParserDiagnostics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 380F81A92D19BC530090A121 /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = SwiftParserDiagnostics;
+		};
+		380F81FA2D19C4250090A121 /* SwiftRefactor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 380F81A92D19BC530090A121 /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = SwiftRefactor;
+		};
+		380F81FC2D19C4250090A121 /* SwiftSyntax */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 380F81A92D19BC530090A121 /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = SwiftSyntax;
+		};
+		380F81FE2D19C4250090A121 /* SwiftSyntaxBuilder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 380F81A92D19BC530090A121 /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = SwiftSyntaxBuilder;
+		};
+		380F82002D19C4250090A121 /* SwiftSyntaxMacroExpansion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 380F81A92D19BC530090A121 /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = SwiftSyntaxMacroExpansion;
+		};
+		380F82022D19C4250090A121 /* SwiftSyntaxMacros */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 380F81A92D19BC530090A121 /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = SwiftSyntaxMacros;
+		};
+		380F82042D19C4250090A121 /* SwiftSyntaxMacrosGenericTestSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 380F81A92D19BC530090A121 /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = SwiftSyntaxMacrosGenericTestSupport;
+		};
+		380F82062D19C4250090A121 /* SwiftSyntaxMacrosTestSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 380F81A92D19BC530090A121 /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = SwiftSyntaxMacrosTestSupport;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 38B3D2302D1973A100BCAE6A /* Project object */;
 }
