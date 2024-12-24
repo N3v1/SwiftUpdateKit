@@ -5,5 +5,5 @@ swift:
   - 6.0
 
 script:
-  - xcodebuild clean build -scheme SwiftUpdateKit -destination 'platform=macOS'  
-  - xcodebuild test -scheme SwiftUpdateKit -destination 'platform=macOS'  
+  - xcodebuild clean build -project SwiftUpdateKit.xcodeproj -scheme SwiftUpdateKit -destination 'platform=macOS'
+  - xcodebuild test -project SwiftUpdateKit.xcodeproj -scheme SwiftUpdateKit -destination 'platform=macOS'
