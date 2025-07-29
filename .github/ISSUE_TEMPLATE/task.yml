@@ -1,0 +1,32 @@
+# This source file is part of the SwiftUpdateKit open source project
+#
+# Copyright (c) 2025 Nevio Hirani. and the SwiftUpdateKit project authors
+# Licensed under Apache License v2.0 with Runtime Library Exception
+#
+# See http://www.apache.org/licenses/LICENSE-2.0 for license information
+
+name: ⚙️ Track a task
+description: >
+  Tasks can be used to track internal work, break down larger issues into subtasks,
+  and serve as umbrella issues to organize development efforts.
+labels: [task, triage needed]
+body:
+  - type: markdown
+    attributes:
+      value: >
+        This repository hosts SwiftUpdateKit, an open source Swift package for update management.
+        Please ensure your task is related to the development or maintenance of SwiftUpdateKit.
+  - type: textarea
+    attributes:
+      label: Description
+      description: >
+        A comprehensive description of the task, written in clear, human language.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Additional information
+      description: >
+        Any additional information that could help an implementor or reviewer understand the task.
+    validations:
+      required: false

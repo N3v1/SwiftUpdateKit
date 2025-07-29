@@ -1,0 +1,11 @@
+or the purpose of tracking copyright, this is the list of individuals and
+organizations who have contributed source code to the SwiftUpdateKit Open Source project.
+For employees of an organization/company where the copyright of work done
+by employees of that company is held by the company itself, only the company
+needs to be listed here.
+
+## COPYRIGHT HOLDERS
+- Nevio Hirani
+
+### Contributors
+- Nevio Hirani <n3v1010@gmail.com>

@@ -1,0 +1,53 @@
+# This source file is part of the SwiftUpdateKit open source project
+#
+# Copyright (c) 2025 Nevio Hirani. and the SwiftUpdateKit project authors
+# Licensed under Apache License v2.0 with Runtime Library Exception
+#
+# See http://www.apache.org/licenses/LICENSE-2.0 for license information
+
+name: 📄 Formally propose a change
+description: >
+  Formally propose an addition, removal, or change to SwiftUpdateKit’s features or public API.
+labels: [proposal, triage needed]
+body:
+  - type: markdown
+    attributes:
+      value: >
+        Use this template to formally propose changes to SwiftUpdateKit.
+        Please provide detailed rationale, design, and examples where applicable.
+  - type: textarea
+    attributes:
+      label: Motivation
+      description: >
+        Describe the problem or motivation for the proposed change.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Proposed solution
+      description: >
+        Describe the solution you propose in detail.
+        Include examples and how it improves or replaces current behavior.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Alternatives considered
+      description: >
+        Any alternative approaches considered and why this solution was chosen.
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Impact
+      description: >
+        Describe any impacts on existing users, API compatibility, or performance.
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Additional information
+      description: >
+        Any additional context or references that can help reviewers.
+    validations:
+      required: false

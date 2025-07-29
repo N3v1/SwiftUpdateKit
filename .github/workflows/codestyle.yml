@@ -1,0 +1,47 @@
+# This source file is part of the SwiftUpdateKit open source project
+#
+# Copyright (c) 2025 Nevio Hirani. and the SwiftUpdateKit project authors
+# Licensed under Apache License v2.0 with Runtime Library Exception
+#
+# See http://www.apache.org/licenses/LICENSE-2.0 for license information
+
+name: Code Style Checks
+
+on:
+  push:
+    branches:
+      - main
+      - 'release/**'
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Swift
+        uses: fwal/setup-swift@v1
+        with:
+          swift-version: '6.0'
+
+      - name: Install SwiftLint
+        run: |
+          brew install swiftlint
+
+      - name: Run SwiftLint
+        run: |
+          swiftlint lint --strict
+
+      - name: Install swift-format
+        run: |
+          swift package update
+          swift build -c release --product swift-format
+
+      - name: Run swift-format lint
+        run: |
+          .build/release/swift-format lint Sources Tests

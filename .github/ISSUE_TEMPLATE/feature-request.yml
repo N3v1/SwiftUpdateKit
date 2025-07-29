@@ -1,0 +1,53 @@
+# This source file is part of the SwiftUpdateKit open source project
+#
+# Copyright (c) 2025 Nevio Hirani. and the SwiftUpdateKit project authors
+# Licensed under Apache License v2.0 with Runtime Library Exception
+#
+# See http://www.apache.org/licenses/LICENSE-2.0 for license information
+
+name: 🚧 Request a feature or improvement
+description: >
+  Request a feature, improvement, or other change to SwiftUpdateKit.
+labels: [feature, triage needed]
+body:
+  - type: markdown
+    attributes:
+      value: >
+        SwiftUpdateKit is an open source Swift package for update management.
+        Please ensure your request is related to SwiftUpdateKit features or improvements.
+
+        ---
+
+        Feature requests help us improve the project. Please provide as much
+        detail as possible to help us understand the motivation and design.
+
+  - type: textarea
+    attributes:
+      label: Motivation
+      description: >
+        Describe the problems this idea seeks to address.
+        Why is this feature important? What drawbacks exist in current solutions?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Proposed solution
+      description: >
+        Describe your proposed solution in detail.
+        Include examples if possible and explain why this is better than alternatives.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Alternatives considered
+      description: >
+        Any alternative approaches considered, and why the proposed solution was chosen.
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Additional information
+      description: >
+        Any additional context, links, or notes helpful for understanding this request.
+    validations:
+      required: false

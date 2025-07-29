@@ -1,0 +1,38 @@
+# This source file is part of the SwiftUpdateKit open source project
+#
+# Copyright (c) 2025 Nevio Hirani. and the SwiftUpdateKit project authors
+# Licensed under Apache License v2.0 with Runtime Library Exception
+#
+# See http://www.apache.org/licenses/LICENSE-2.0 for license information
+
+name: 🌐 Discuss an idea
+description: >
+  Share a new idea, concept, or general discussion topic with the SwiftUpdateKit community.
+labels: [discussion, idea]
+body:
+  - type: markdown
+    attributes:
+      value: >
+        Use this template to share your ideas or start a discussion about SwiftUpdateKit.
+        This is a great place for brainstorming or exploring new features.
+  - type: textarea
+    attributes:
+      label: Idea description
+      description: >
+        Please describe your idea in detail. Explain the motivation behind it and any context.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Benefits
+      description: >
+        What benefits or improvements do you expect from this idea?
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Additional information
+      description: >
+        Any additional context, references, or links related to your idea.
+    validations:
+      required: false

@@ -1,0 +1,7 @@
+version: 1
+builder:
+  configs:
+    - documentation_targets:
+        - SwiftUpdateKit
+        - swift-update-gen
+      swift_version: 6.0

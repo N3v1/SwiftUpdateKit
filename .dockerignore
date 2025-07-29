@@ -1,0 +1,24 @@
+# Ignore Swift build artifacts
+.build/
+DerivedData/
+
+# Xcode project files and user data
+*.xcodeproj/
+xcuserdata/
+
+# Swift Package Manager local files
+.swiftpm/
+
+# macOS system files
+.DS_Store
+
+# Editor specific files
+.vscode/
+
+# Temporary editor files
+*.swp
+*.lock
+*.tmp
+
+# Logs
+*.log

@@ -1,8 +1,59 @@
+# macOS system files
 .DS_Store
-/.build
-/Packages
-xcuserdata/
+
+# Editor related files
+.vscode/
+
+# Build artifacts
+/.build/
 DerivedData/
+
+# Swift Package Manager files
+/.swiftpm/
 .swiftpm/configuration/registries.json
 .swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+
+# Xcode user data and workspace settings
+xcuserdata/
+*.xcuserstate
+
+# CocoaPods (if you ever use it)
+/Pods/
+/Podfile.lock
+
+# Carthage (if you ever use it)
+/Carthage/Build/
+
+# fastlane files (if you use fastlane)
+/fastlane/report.xml
+/fastlane/Preview.html
+/fastlane/screenshots
+/fastlane/test_output
+
+# Temporary files
+*.swp
+*.lock
+*.tmp
+
+# Private credentials or environment files
 .netrc
+.env
+.env.*
+
+# Archives and installers
+*.ipa
+*.dmg
+*.app
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# SwiftPM cache (optional, if you want)
+/Packages/
+
+# Swift Package Manager artifacts
+.build/
+
+# Logs
+*.log

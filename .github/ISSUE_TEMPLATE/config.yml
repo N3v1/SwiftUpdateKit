@@ -1,0 +1,19 @@
+# This source file is part of the SwiftUpdateKit open source project
+#
+# Copyright (c) 2025 Nevio Hirani. and the SwiftUpdateKit project authors
+# Licensed under Apache License v2.0 with Runtime Library Exception
+#
+# See http://www.apache.org/licenses/LICENSE-2.0 for license information
+
+blank_issues_enabled: true
+contact_links:
+  - name: 🙋 Ask a question on the Apple Developer Forums
+    url: https://developer.apple.com/forums
+    about: >
+      Ask a question about or get help with app development for Apple platforms
+      in general. Topics include Xcode and other closed source Apple developer
+      software such as SwiftUI and UIKit.
+  - name: 📖 Learn Swift
+    url: https://docs.swift.org/swift-book/documentation/the-swift-programming-language
+    about: >
+      Read The Swift Programming Language, the official book on Swift.
